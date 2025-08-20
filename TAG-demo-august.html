@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Atacama Group</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d3') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    /* Section Base */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #00b2ff;
+      text-align: center;
+    }
+
+    /* Columns */
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 280px;
+      max-width: 360px;
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      transition: transform 0.3s ease;
+    }
+
+    .column:hover {
+      transform: translateY(-5px);
+    }
+
+    .column h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #ff6f00;
+    }
+
+    .column p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    /* Map Section */
+    .map-section {
+      background-color: #111;
+      text-align: center;
+    }
+
+    .map-section p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .map-container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #333;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    /* Expanded Core Competencies */
+    .core-expanded {
+      background-color: #0f0f0f;
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 40px;
+    }
+
+    .core-item {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .core-image {
+      width: 100%;
+      height: 250px;
+      background-color: #333;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .core-text {
+      padding: 30px;
+    }
+
+    .core-text h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #ff6f00;
+    }
+
+    .core-text h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .core-text p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      iframe {
+        height: 300px;
+      }
+
+      .core-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Where Bold Ideas Power Africa’s Next Chapter.</h1>
+      <p>We are TAG. From bulk fuel to alternative energy, transport to communications—we move with the continent’s rising demand, delivering bold solutions where momentum meets opportunity.</p>
+    </div>
+  </header>
+
+  <!-- Intro Section -->
+  <section>
+    <h2>The Atacama Group (TAG) represents the culmination of 15 years of logistics operations in southern Africa.</h2>
+    <div class="columns">
+      <div class="column">
+        <h3>Why TAG?</h3>
+        <p>Built on Experience. Wired for What’s Next. We’ve been in the game for decades, rooted deep in SADC markets—but we’re not slowing down. From smarter infrastructure to future-forward energy, we’re scaling up and leaning in to help Africa move faster, connect wider, and grow stronger.</p>
+      </div>
+      <div class="column">
+        <h3>What We Do</h3>
+        <p>When logistics get tangled, we bring clarity with smart, straightforward solutions. We’re all about identifying the real pain points, smoothing out the complexity, and getting everything flowing again—efficiently, effectively, and with lasting impact.</p>
+      </div>
+      <div class="column">
+        <h3>Our Mission</h3>
+        <p>We Make Systems Smarter—So People Thrive. Our mission? Strip out the slow, plug in the smart, and unlock serious potential. By making operations smoother and more intuitive, we’re not just fixing today—we're building momentum that lasts for millions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <h2>Decades of Expertise, Driving Africa Forward.</h2>
+    <p>Real Experience. Real Impact. We’ve spent years on the ground, helping countries move smarter and grow faster. From streamlining transport to strengthening infrastructure, we’re in the business of unlocking big opportunities—and making progress feel possible.</p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1zU4ZzYxJXy9XfKXvXKXvXKXvXKXvXKX" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="core-expanded">
+  <h2>Our Core Competencies</h2>
+  <p style="text-align:center; max-width:800px; margin:0 auto 40px; color:#ccc;">
+    Backed by Trust. Driven by Insight. We’ve got our partners' and shareholders’ backs—with sharp thinking, steady support, and the kind of reliability that earns long-term confidence. When you work with us, you know you’re in capable hands, every step of the way.
+  </p>
+
+  <div class="core-grid">
+    <!-- Bulk Fuel Storage -->
+    <div class="core-item">
+      <div class="core-image" style="background-image: url('https://via.placeholder.com/600x250?text=Bulk+Fuel+Storage');"></div>
+      <div class="core-text">
+        <h3>Bulk Fuel Storage Solutions</h3>
+        <h4>Fuel That Moves, Even When Borders Don’t.</h4>
+        <p>In the heart of landlocked Africa, we keep things flowing. Our smart, reliable fuel storage systems help sidestep the usual hold-ups—whether it’s red tape, transport hiccups, or shifting demand. By making storage simpler and supply chains stronger, we help governments and businesses stay powered up, trade confidently, and grow without limits.</p>
+      </div>
+    </div>
+
+    <!-- Energy & Mineral Trading -->
+    <div class="core-item">
+      <div class="core-image" style="background-image: url('https://via.placeholder.com/600x250?text=Energy+%26+Mineral+Trading');"></div>
+      <div class="core-text">
+        <h3>Energy & Mineral Trading</h3>
+        <h4>Smarter Trading. Stronger Markets.</h4>
+        <p>We bring sharp tools and real-world smarts to Africa’s energy and mineral trade. By making deals smoother, prices clearer, and resource flows faster, we help governments and businesses stay nimble—seizing every opportunity and staying one step ahead. Because when the market shifts, we’re already moving.</p>
+      </div>
+    </div>
+
+    <!-- Alternative Energy Solutions -->
+    <div class="core-item">
+      <div class="core-image" style="background-image: url('https://via.placeholder.com/600x250?text=Alternative+Energy');"></div>
+      <div class="core-text">
+        <h3>Alternative Energy Solutions</h3>
+        <h4>Powering Africa's Future—Clean, Smart, & Built to Last</h4>
+        <p>We’re driving the shift to renewables with bold investments in solar, wind, and smart energy tech. By building cleaner, more reliable infrastructure, we’re helping cut the fossil fuel cord, shrink emissions, and spark real economic change. The payoff? Sustainable power that fuels progress for the people and places that need it most.</p>
+      </div>
+    </div>
+
+    <!-- Transport & Communications -->
+    <div class="core-item">
+      <div class="core-image" style="background-image: url('https://via.placeholder.com/600x250?text=Transport+%26+Comms');"></div>
+      <div class="core-text">
+        <h3>Transport & Communications</h3>
+        <h4>Built for Movement. Made for Connection.</h4>
+        <p>We’re designing the networks that keep Africa on the move—from upgraded roads and trade routes to fast, flexible digital infrastructure. Our systems are built to ease the pressure, speed things up, and open new doors for business, people, and progress across the continent. Because when connectivity flows, everything else follows.</p>
+      </div>
+    </div>
+
+    <!-- Add-on: Strategic Advisory -->
+    <div class="core-item">
+      <div class="core-image" style="background-image: url('https://via.placeholder.com/600x250?text=Strategic+Advisory');"></div>
+      <div class="core-text">
+        <h3>Strategic Advisory & Partnerships</h3>
+        <h4>Insight That Moves Markets.</h4>
+        <p>We help governments and investors navigate complexity with confidence. From regulatory strategy to cross-border partnerships, our advisory services are built on deep regional knowledge and operational experience—so every move is informed, aligned, and built to last.</p>
+      </div>
+    </div>
+
+    <!-- Add-on: Digital Infrastructure -->
+    <div class="core-item">
+      <div class="core-image" style="background-image: url('https://via.placeholder.com/600x250?text=Digital+Infra');"></div>
+      <div class="core-text">
+        <h3>Digital Infrastructure & Innovation</h3>
+        <h4>Smart Systems for a Smarter Continent.</h4>
+        <p>We’re investing in the digital backbone of Africa—from cloud-based logistics platforms to smart energy grids. Our tech-first approach helps streamline operations, reduce friction, and unlock new efficiencies across sectors. Because the future isn’t just connected—it’s intelligent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+            
