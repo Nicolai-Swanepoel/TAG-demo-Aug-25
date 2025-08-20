@@ -5,6 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Atacama Group</title>
   <style>
+    
+    :root {
+  --primary: #006644;
+  --bg-dark: #0a0a0a;
+  --text-light: #f0f0f0;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-dark);
+  padding: 12px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links li a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--text-light);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    right: 20px;
+    background-color: var(--bg-dark);
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -208,10 +292,110 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    
+    /* Scroll Reveal Animation */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+  animation: slideUp 1s ease-out;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #111;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00b2ff;
+}
+
+.contact-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #ff6f00;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #00b2ff;
+}
+
+button {
+  padding: 14px 24px;
+  background-color: #00b2ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #008ecc;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+}
+
   </style>
 </head>
 <body>
-
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo">
+      <img src="TAG-logo.png" alt="TAG Logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#core">Core</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Toggle navigation" role="button">&#9776;</div>
+  </div>
+</nav>
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
@@ -316,5 +500,50 @@
     </div>
   </div>
 </section>
+  <!-- Contact Section -->
+<section class="contact-section">
+  <h2>Let's Connect</h2>
+  <p>Have a project, partnership, or question? Reach out—we're ready to move.</p>
+  <form class="contact-form" action="#" method="POST">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+    
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = "running";
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    section.style.animationPlayState = "paused";
+    observer.observe(section);
+  });
+</script>
+
+
 
             
